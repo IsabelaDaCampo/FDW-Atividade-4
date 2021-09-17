@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="shortcut icon" href="./images/javascript.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Atividade 4 - Linguagem JavaScript</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mt-3 text-primary ">Atividades de JavaScript</h1>
+      <form>
+        <p class="lead">1) Calcule a média aritmética das 3 notas de um aluno e mostre, além do valor da média, uma mensagem de
+          "Aprovado", caso a média seja igual ou superior a 6, ou mensagem "Reprovado", caso contrário.
+        </p>
+        <div class="row">
+          <div class="col col-sm-4">
+            <input type="number" class="form-control" id="Q1Nota1" min="0" max="10" placeholder="Nota 1">
+          </div>
+          <div class="col col-sm-4">
+            <input type="number" class="form-control" id="Q1Nota2" min="0" max="10" placeholder="Nota 2">
+          </div>
+          <div class="col col-sm-4">
+            <input type="number" class="form-control" id="Q1Nota3" min="0" max="10" placeholder="Nota 3">
+          </div>
+          <div class="row">
+            <div class="col col-sm-5 mt-2">
+              <button type="button" class="btn btn-primary" onclick="mediaAritmetica()">Calcular média aritmética</button>
+            </div>
+            <div class="col col-sm-7 mt-3">
+              <h5 id="resultadoMediaAritmetica"></h5>
+            </div>
+          </div>           
+        </div>
+        <hr />
+        <p class="lead">2) Elabore um algoritmo que dada a idade de um nadador, classifique-o em uma das seguintes categorias:
+          <ul>
+            <li>Infantil = 5 a 7 anos</li>
+            <li>Juvenil = 8 a 13 anos</li>
+            <li>Adolescente = 14 a 17 anos</li>
+            <li>Adulto = maiores de 18 anos</li>
+          </ul>
+        </p>
+        <div class="row">
+          <div class="col col-sm-2">
+            <input type="number" class="form-control" id="Q2Idade" min="5" placeholder="Idade">
+          </div>
+          <div class="col col-sm-4">
+            <button type="button" class="btn btn-primary" onclick="categoriaNadador()">Categoria</button>
+          </div>
+          <div class="col col-sm-6">
+            <h5 id="resultadoIdadeNadador"></h5>
+          </div>
+        </div>
+        <hr />
+        <p class="lead">3) Utilize o comando "for" para calcular e exibir a tabuada do número 7.</p>
+        <div class="col col-sm-6">
+          <button type="button" class="btn btn-primary" onclick="tabuada()">Clique para exibir a tabuada do 7</button>
+        </div>
+        <div class="col col-sm-12">
+          <p id="resultadoTabuada"></p>
+        </div>
+        <hr />
+        <p class="lead">4) Solicite o tempo de prova dos três finalistas do campeonato de natação. Através dos tempos informados verifique e
+          mostre quem ficou com as respectivas medalhas de ouro, de prata e de bronze.
+        </p>
+        <div class="row">
+          <div class="col col-sm-4">
+            <input type="number" class="form-control" id="Q4Tempo1" placeholder="Tempo">
+          </div>
+          <div class="col col-sm-4">
+            <input type="number" class="form-control" id="Q4Tempo2" placeholder="Tempo">
+          </div>
+          <div class="col col-sm-4">
+            <input type="number" class="form-control" id="Q4Tempo3" placeholder="Tempo">
+          </div>
+          <div class="row">
+            <div class="col col-sm-4 mt-2">
+              <button type="button" class="btn btn-primary" onclick="vencedoresNatacao()">Vencedores natação</button>
+            </div>
+            <div class="col col-sm-6 mt-3">
+              <h5 id="resultadoVencedores"></h5>
+            </div>
+          </div>           
+        </div>
+        <hr />
+        <p class="lead">5) Faça um algoritmo para calcular quantos metros quadrados tem uma das janelas de sua casa, onde:
+          m2 = largura * altura
+        </p>
+        <div class="row">
+          <div class="col col-sm-4">
+            <input type="number" class="form-control" id="Q5Largura" placeholder="Largura">
+          </div>
+          <div class="col col-sm-4">
+            <input type="number" class="form-control" id="Q5Altura" placeholder="Altura">
+          </div>
+          <div class="col col-sm-4">
+            <button type="button" class="btn btn-primary" onclick="metrosQuadrados()">Calcular</button>
+          </div>
+          <div class="col col-sm-6 mt-3">
+            <h5 id="resultadoJanela"></h5>
+          </div>
+        </div>
+        <hr />
+        <p class="lead">6) Efetuar o cálculo do valor de uma prestação em atraso, onde são cobrados 2% de juros a cada dia de atraso.
+          Calcule e mostre o valor da prestação, o total de juros a ser cobrado e o total à pagar. Sendo que o valor da prestação
+          e a quantidade de dias de atraso da parcela devem ser solicitados pelo algoritmo.
+        </p>
+        <div class="row">
+          <div class="col col-sm-4">
+            <input type="number" class="form-control" id="Q6Prestacao" placeholder="Prestação">
+          </div>
+          <div class="col col-sm-4">
+            <input type="number" class="form-control" id="Q6Atraso" placeholder="Dias em atraso">
+          </div>
+          <div class="col col-sm-4">
+            <button type="button" class="btn btn-primary" onclick="calcularPrestacao()">Calcular</button>
+          </div>
+          <div class="col col-sm-6 mt-3">
+            <h5 id="valorPrestacao"></h5>
+            <h5 id="jurosPrestacao"></h5>
+            <h5 id="resultadoPrestacao"></h5>
+          </div>
+        </div>
+        <hr />
+        <p class="lead">7) Faça um algoritmo que receba um valor inteiro e informe se o valor informado é positivo ou negativo ou neutro
+          (quando for zero).
+        </p>
+        <div class="row">
+          <div class="col col-sm-4">
+            <input type="number" class="form-control" id="Q7Numero" placeholder="Número inteiro">
+          </div>
+          <div class="col col-sm-4">
+            <button type="button" class="btn btn-primary" onclick="numeroInteiro()">Calcular</button>
+          </div>
+          <div class="col col-sm-6 mt-3">
+            <h5 id="resultadoNumeroInteiro"></h5>
+          </div>
+        </div>
+        <hr />
+        <p class="lead">8) Escreva um algoritmo que leia 2 números inteiros e mostre o menor deles.</p>
+        <div class="row">
+          <div class="col col-sm-4">
+            <input type="number" class="form-control" id="Q8Numero1" placeholder="Número inteiro 1">
+          </div>
+          <div class="col col-sm-4">
+            <input type="number" class="form-control" id="Q8Numero2" placeholder="Número inteiro 2">
+          </div>
+          <div class="col col-sm-4">
+            <button type="button" class="btn btn-primary" onclick="calcularMenor()">Calcular</button>
+          </div>
+          <div class="col col-sm-6 mt-3">
+            <h5 id="resultadoNumeroMenor"></h5>
+          </div>
+        </div>
+        <hr />
+        <p class="lead">9) Faça um algoritmo que leia um conjunto de quatro valores e informe se a soma dos dois primeiros é maior que a
+          soma dos dois últimos valores lidos.
+        </p>
+        <div class="row">
+          <div class="col col-sm-3">
+            <input type="number" class="form-control" id="Q9Numero1" placeholder="Número inteiro 1">
+          </div>
+          <div class="col col-sm-3">
+            <input type="number" class="form-control" id="Q9Numero2" placeholder="Número inteiro 2">
+          </div>
+          <div class="col col-sm-3">
+            <input type="number" class="form-control" id="Q9Numero3" placeholder="Número inteiro 3">
+          </div>
+          <div class="col col-sm-3">
+            <input type="number" class="form-control" id="Q9Numero4" placeholder="Número inteiro 4">
+          </div>
+          <div class="row">
+            <div class="col col-sm-4 mt-2">
+              <button type="button" class="btn btn-primary" onclick="calcularSomas()">Calcular</button>
+            </div>
+            <div class="col col mt-3">
+              <h5 id="resultadoNumeroCalculoMenor"></h5>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <p class="lead">10) Faça um algoritmo que leia a idade de uma pessoa expressa em anos, meses e dias e mostre-a expressa apenas
+          em dias.
+        </p>
+        <div class="row">
+          <div class="col col-sm-3">
+            <input type="number" class="form-control" id="Q10Dia" placeholder="Dia de nascimento">
+          </div>
+          <div class="col col-sm-3">
+            <input type="number" class="form-control" id="Q10Mes" placeholder="Mês de nascimento">
+          </div>
+          <div class="col col-sm-3">
+            <input type="number" class="form-control" id="Q10Ano" placeholder="Ano de nascimento">
+          </div>
+          <div class="row">
+            <div class="col col-sm-4 mt-2">
+              <button type="button" class="btn btn-primary" onclick="calcularDiasIdade()">Calcular</button>
+            </div>
+            <div class="col col mt-3">
+              <h5 id="resultadoDiasIdade"></h5>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <p class="lead">11) Crie uma função JavaScript para criar um álbum de fotos com 10 imagens. Nesta função declare um vetor contendo
+          o nome de cada imagem, depois faça um loop para percorrer esse vetor e criar dinamicamente as 10 imagens na
+          página HTML. Lembre-se de salvar na pasta junto ao seu HTML 10 imagens com os mesmo nomes que você usou no
+          vetor.
+        </p>
+        <div class="row">
+          <div class="col col-sm-4 mt-2">
+            <button type="button" class="btn btn-primary" onclick="mostrarImages()">Mostrar Imagens</button>
+          </div>
+        </div>
+        <div class="row">
+          <div id="imagesRow"></div>
+        </div>
+        <hr />
+
+
+      </form>
+    </div>
+    <script src="./scripts/ativade.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  </body>
+</html>
